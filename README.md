@@ -3,7 +3,7 @@ Running:
 php composer.phar install --ignore-platform-reqs
 php init --env=Development
 docker-compose up -d
-docker exec -it adm-frontend /bin/bash -c 'php yii migrate/up --interactive=0'
+docker exec -it test-sql-frontend /bin/bash -c 'php yii migrate/up --interactive=0'
 ```
 
 Test page:\
