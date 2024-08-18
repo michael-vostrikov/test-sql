@@ -13,8 +13,8 @@ return [
     'container' => [
         'singletons' => [
             \yii\db\Connection::class => (require __DIR__ . '/main-local.php')['components']['db'],
-            \yii\mutex\MysqlMutex::class => function () {
-                return new \yii\mutex\MysqlMutex();
+            \yii\mutex\PgsqlMutex::class => function () {
+                return new \yii\mutex\PgsqlMutex();
             },
         ],
     ],

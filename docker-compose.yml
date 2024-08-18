@@ -3,7 +3,7 @@ version: '3.2'
 services:
 
   frontend:
-    container_name: 'adm-frontend'
+    container_name: 'test-sql-frontend'
     build: frontend
     ports:
       - '80:80'
@@ -19,12 +19,12 @@ services:
     extra_hosts:
       - host.docker.internal:host-gateway
 
-  mysql:
-    image: mysql:5.7
+  postgres:
+    container_name: 'test-sql-postgres'
+    image: postgres:16.4-alpine3.20
     environment:
-      - MYSQL_ROOT_PASSWORD=verysecret
-      - MYSQL_DATABASE=yii2advanced
-      - MYSQL_USER=yii2advanced
-      - MYSQL_PASSWORD=secret
+      - POSTGRES_DB=yii2advanced
+      - POSTGRES_USER=yii2advanced
+      - POSTGRES_PASSWORD=secret
     ports:
-      - '3306:3306'
+      - '5432:5432'

@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace common\repositories;
 
 use RuntimeException;
-use yii\mutex\MysqlMutex;
+use yii\mutex\PgsqlMutex;
 
 class LockService
 {
     private const LOCK_TIMEOUT = 10;
 
-    public function __construct(private readonly MysqlMutex $mutex)
+    public function __construct(private readonly PgsqlMutex $mutex)
     {
     }
 
